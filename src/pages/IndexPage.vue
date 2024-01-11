@@ -24,30 +24,19 @@
       <template v-slot:body="props">
         <q-tr :props="props">
           <q-td key="full_name"
-                class="text-yellow-4"
                 :props="props">
             {{ props.row.full_name }}
           </q-td>
           <q-td key="payment"
                 :props="props">
-            <!--
             <q-icon :class="{
               'text-green-14': props.row.payment === 'paid',
               'text-red-14': props.row.payment === 'unpaid'
             }
               "
                     :name="props.row.payment === 'paid' ? 'done' : 'close'" />
-            -->
-            <span :class="{
-              'text-green-14': props.row.payment === 'paid',
-              'text-red-14': props.row.payment === 'unpaid'
-            }"
-                  class="text-capitalize">
-              {{ props.row.payment }}
-            </span>
           </q-td>
           <q-td key="phone_number"
-                class="text-yellow-4"
                 :props="props">
             {{ props.row.phone_number }}
           </q-td>
@@ -69,7 +58,7 @@ const columns = [
     sortable: true
   },
   // {name: 'last_name', align: 'left', label: 'Last Name', field: row => row.last_name, sortable: true},
-  {name: 'payment', align: 'left', label: 'Payment', field: row => row.payment, sortable: true},
+  {name: 'payment', align: 'center', label: 'Payment', field: row => row.payment, sortable: true},
   {
     name: 'phone_number',
     required: true,
